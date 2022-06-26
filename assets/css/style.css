@@ -449,6 +449,9 @@ section {
 .resume .resume-item .paragraph {
   display: flex;
 }
+.resume .resume-item .paragraph a {
+  color: #050d18;
+}
 .resume .resume-item ul {
   padding-left: 20px;
 }
