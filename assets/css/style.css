@@ -403,6 +403,31 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+.resume .section-title .btn-download-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #149ddd;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.resume .section-title .btn-download-resume:hover {
+  background: #1f5297;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.4);
+}
+.resume .section-title .btn-download-resume i {
+  font-size: 16px;
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
