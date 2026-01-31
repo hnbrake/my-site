@@ -8,6 +8,18 @@
   "use strict";
 
   /**
+   * Preloader
+   */
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+      }, 300);
+    });
+  }
+
+  /**
    * Dark Mode Toggle
    */
   const darkModeToggle = document.getElementById('darkModeToggle');
