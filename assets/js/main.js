@@ -287,4 +287,17 @@
     })
   });
 
+  /**
+   * Dottie image slideshow
+   */
+  const dottieSlides = document.querySelectorAll('.dottie-slide');
+  if (dottieSlides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      dottieSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % dottieSlides.length;
+      dottieSlides[currentSlide].classList.add('active');
+    }, 3000);
+  }
+
 })()

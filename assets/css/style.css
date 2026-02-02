@@ -185,13 +185,35 @@ body.dark-mode .about .content h3 {
   color: #e0e0e0;
 }
 
-/* Dark mode - Facts */
-body.dark-mode .facts .count-box p {
-  color: #c0c0c0;
+/* Dark mode - Projects */
+body.dark-mode .projects .section-title p {
+  color: #a0a0a0;
 }
 
-body.dark-mode .facts .count-box a {
-  color: #4db8e8;
+body.dark-mode .projects .project-card {
+  background: #16213e;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .projects .project-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .projects .project-content h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .projects .project-content p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .projects .project-tags span {
+  background: #2a2a4a;
+  color: #7dd3f7;
+}
+
+body.dark-mode .projects .achievement-card .achievement-media {
+  background: linear-gradient(135deg, #149ddd 0%, #0f3460 100%);
 }
 
 /* Dark mode - Skills */
@@ -590,49 +612,340 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Facts
+# Projects (Most Proud Of)
 --------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
+.projects {
+  padding: 60px 0;
 }
-.facts .count-box {
-  padding: 30px;
+
+.projects .section-title p {
+  color: #6c757d;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.projects .project-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: visible;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.projects .project-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.projects .project-media img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
+
+.projects .project-card:hover .project-media img {
+  transform: scale(1.1);
+}
+
+.projects .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 157, 221, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projects .project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.projects .project-overlay a {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #149ddd;
-  float: left;
-  line-height: 0;
+  font-size: 22px;
+  transition: transform 0.3s ease;
 }
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
+
+.projects .project-overlay a:hover {
+  transform: scale(1.15);
+}
+
+.projects .project-content {
+  padding: 25px;
+  padding-top: 35px;
+  position: relative;
+  overflow: visible;
+}
+
+.projects .project-icon {
+  position: absolute;
+  top: -25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: #149ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.4);
+  z-index: 10;
+}
+
+.projects .project-icon i {
+  color: #fff;
+  font-size: 22px;
+}
+
+.projects .project-content h3 {
+  font-size: 20px;
   font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
+  color: #173b6c;
+  margin-bottom: 12px;
+  font-family: "Poppins", sans-serif;
 }
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
+
+.projects .project-content p {
+  color: #555;
   font-size: 14px;
-  color: #122f57;
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
-.facts .count-box a {
-  /* font-weight: 600; */
-  text-decoration: underline;
-  display: box;
-  margin-top: 0;
-  color: #122f57;
+
+.projects .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.projects .project-tags span {
+  background: #e8f4fc;
+  color: #1a5a8a;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.projects .project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.projects .btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #149ddd;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.projects .btn-project:hover {
+  background: #1f5297;
+  transform: translateY(-2px);
+}
+
+.projects .btn-project i {
+  font-size: 16px;
+}
+
+/* Achievement Card Special Styling */
+.projects .achievement-card .achievement-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #149ddd 0%, #1f5297 100%);
+}
+
+.projects .achievement-badge {
+  text-align: center;
+  color: #fff;
+}
+
+.projects .achievement-badge i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.projects .achievement-badge .gpa {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+}
+
+.projects .achievement-badge .gpa-label {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* Video embed support */
+.projects .project-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects .project-media iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Video icon overlay */
+.projects .video-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.projects .video-icon-overlay i {
+  font-size: 30px;
+  color: #149ddd;
+}
+
+.projects .project-card:hover .video-icon-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(20, 157, 221, 0.4);
+}
+
+/* Weather App Visual */
+.projects .weather-media {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects .weather-display {
+  text-align: center;
+  color: #fff;
+}
+
+.projects .weather-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.projects .weather-icon {
+  font-size: 32px;
+  animation: weatherFloat 3s ease-in-out infinite;
+}
+
+.projects .weather-icon.sun {
+  color: #ffd93d;
+  animation-delay: 0s;
+}
+
+.projects .weather-icon.cloud {
+  color: #fff;
+  animation-delay: 0.5s;
+}
+
+.projects .weather-icon.rain {
+  color: #a8d8ff;
+  animation-delay: 1s;
+}
+
+@keyframes weatherFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.projects .weather-temp {
+  font-size: 56px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.projects .weather-label {
   font-size: 14px;
-  font-family: "Raleway", sans-serif;
-  transition: ease-in-out 0.3s;
+  opacity: 0.9;
+  margin-top: 5px;
+  letter-spacing: 1px;
 }
-.facts .count-box a:hover {
-  color: #1f5297;
+
+/* Dottie Slideshow */
+.projects .dottie-slideshow {
+  position: relative;
+  background: #1a1a2e;
+}
+
+.projects .dottie-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.projects .dottie-slide.active {
+  opacity: 1;
+}
+
+/* Gaming PC - show full image */
+.projects .pc-media {
+  background: #1a1a2e;
+}
+
+.projects .pc-media img {
+  object-fit: contain;
 }
 
 /*--------------------------------------------------------------
