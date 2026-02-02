@@ -15,7 +15,7 @@
   right: 0;
   bottom: 0;
   z-index: 99999;
-  background: #040b14;
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -560,7 +560,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #222;
 }
 .section-title h2::after {
   content: "";
@@ -587,7 +587,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #222;
 }
 .about .content ul {
   list-style: none;
@@ -722,7 +722,7 @@ section {
 .projects .project-content h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #173b6c;
+  color: #222;
   margin-bottom: 12px;
   font-family: "Poppins", sans-serif;
 }
@@ -984,7 +984,7 @@ section {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #173b6c;
+  color: #222;
   font-family: "Poppins", sans-serif;
 }
 
@@ -1055,7 +1055,7 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: #222;
 }
 .resume .resume-item {
   padding: 0 0 20px 20px;
@@ -1069,7 +1069,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: #222;
   margin-bottom: 10px;
 }
 .resume .resume-item h5 {
@@ -1097,7 +1097,7 @@ section {
   display: flex;
 }
 .resume .resume-item .paragraph a {
-  color: #050d18;
+  color: #222;
 }
 .resume .resume-item ul {
   padding-left: 20px;
@@ -1417,20 +1417,20 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #050d18;
+  color: #222;
 }
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 14px;
-  color: #173b6c;
+  color: #222;
 }
 
 .contact .info a {
   /* padding: 0 0 10px 60px;
   margin-bottom: 20px; */
   font-size: 14px;
-  color: #173b6c;
+  color: #222;
 }
 .contact .info .email p {
   padding-top: 5px;
@@ -1583,7 +1583,7 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #0e2442;
+  color: #333;
   content: "/";
 }
 @media (max-width: 768px) {
