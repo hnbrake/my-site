@@ -288,16 +288,18 @@
   });
 
   /**
-   * Dottie image slideshow
+   * Project image slideshows (each container cycles independently)
    */
-  const dottieSlides = document.querySelectorAll('.dottie-slide');
-  if (dottieSlides.length > 0) {
+  document.querySelectorAll('.project-slideshow, .dottie-slideshow').forEach((slideshow) => {
+    const slides = slideshow.querySelectorAll('.project-slide, .dottie-slide');
+    if (slides.length < 2) return;
+
     let currentSlide = 0;
     setInterval(() => {
-      dottieSlides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % dottieSlides.length;
-      dottieSlides[currentSlide].classList.add('active');
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
     }, 3000);
-  }
+  });
 
 })()
