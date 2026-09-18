@@ -20,28 +20,6 @@
   }
 
   /**
-   * Dark Mode Toggle
-   */
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-  
-  // Check for saved preference or system preference
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    body.classList.add('dark-mode');
-  }
-  
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  }
-
-  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
@@ -76,15 +54,36 @@
 
   /**
    * Navbar links active state on scroll
+   * Uses document positions (getBoundingClientRect) so sections inside #main
+   * are measured correctly against the hero, and only one link is active.
    */
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
-    let position = window.scrollY + 200
+    if (!navbarlinks.length) return
+
+    const scrollPos = window.scrollY + Math.min(160, window.innerHeight * 0.25)
+    const docHeight = document.documentElement.scrollHeight
+    const nearBottom = (window.scrollY + window.innerHeight) >= (docHeight - 80)
+    let activeLink = null
+
+    // Near the bottom of the page, always highlight the last nav section (Contact)
+    if (nearBottom) {
+      activeLink = navbarlinks[navbarlinks.length - 1]
+    } else {
+      navbarlinks.forEach(navbarlink => {
+        if (!navbarlink.hash) return
+        const section = select(navbarlink.hash)
+        if (!section) return
+
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY
+        if (scrollPos >= sectionTop) {
+          activeLink = navbarlink
+        }
+      })
+    }
+
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      if (navbarlink === activeLink) {
         navbarlink.classList.add('active')
       } else {
         navbarlink.classList.remove('active')
@@ -95,12 +94,14 @@
   onscroll(document, navbarlinksActive)
 
   /**
-   * Scrolls to an element with header offset
+   * Scrolls to an element with accurate document offset
    */
   const scrollto = (el) => {
-    let elementPos = select(el).offsetTop
+    const section = select(el)
+    if (!section) return
+    const top = section.getBoundingClientRect().top + window.scrollY
     window.scrollTo({
-      top: elementPos,
+      top: top,
       behavior: 'smooth'
     })
   }

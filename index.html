@@ -9,12 +9,10 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- meIcons -->
-  <link href="assets/img/meIcon.png" rel="icon">
-  <link href="assets/img/meIcon.png" rel="meIcon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Favicon / brand -->
+  <link href="assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="assets/img/my-logo.png" rel="icon" type="image/png" sizes="any">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -51,18 +49,12 @@
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- ======= Dark Mode Toggle ======= -->
-  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-    <i class="bi bi-moon-fill"></i>
-    <i class="bi bi-sun-fill"></i>
-  </button>
-
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/coffee.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/coffee.jpg" alt="Hannah Brake" class="img-fluid profile-photo">
         <h1 class="text-light"><a href="index.html">Hannah Brake</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://www.github.com/hnbrake/" class="github hyperlinks"><i class="bx bxl-github"></i></a>
@@ -79,7 +71,9 @@
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-star"></i> <span>Most Proud Of</span></a></li>
+          <li><a href="#showcase" class="nav-link scrollto"><i class="bx bx-laptop"></i> <span>Current Project</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-star"></i> <span>Additionally Proud Of</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills & Strengths</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Experience</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -90,6 +84,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
+      <img src="assets/img/my-logo.png" alt="Hannah Brake logo" class="hero-logo">
       <h1>Hannah Brake</h1>
       <p>I'm a <span class="typed" data-typed-items="Software Test Engineer, Software Developer, Raspberry Pi Enthusiast, Musician"></span></p>
     </div>
@@ -140,12 +135,114 @@
       </div>
     </section><!-- End About Section -->
 
+    <!-- ======= Showcase Section ======= -->
+    <section id="showcase" class="showcase">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Current Project Showcase</h2>
+          <p>I am on a mission to enhance the feel of macOS, and optimize it for me! Working on a suite of my own macOS apps for personalizing the desktop user experience.</p>
+        </div>
+
+        <div class="showcase-hero" data-aos="fade-up">
+          <div class="showcase-hero-badge">
+            <i class="bi bi-apple"></i>
+            <span>macOS Personalization</span>
+          </div>
+          <h3>Desktop tools that feel built-in</h3>
+          <p>
+            Three Swift apps designed for macOS 27 — a notch welcome island, a glassy edge app switcher,
+            and a live resource monitor. Open-source and built to live quietly alongside the system UI.
+          </p>
+          <div class="showcase-meta">
+            <span>Swift</span>
+            <span>SwiftUI</span>
+            <span>macOS 27</span>
+            <span>3 public repos</span>
+          </div>
+        </div>
+
+        <div class="row showcase-repos">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article class="showcase-card">
+              <div class="showcase-media">
+                <img src="assets/img/showcase/welcome-island.png" alt="Welcome Island notch greeting demo">
+              </div>
+              <div class="showcase-card-top">
+                <div class="showcase-icon">
+                  <i class="bi bi-phone-landscape"></i>
+                </div>
+                <span class="showcase-step">01</span>
+              </div>
+              <h4>Welcome Island</h4>
+              <p>A personalized welcome that expands around the camera notch on unlock — greeting, upcoming Calendar events, and suggested apps.</p>
+              <div class="showcase-tags">
+                <span>Notch UI</span>
+                <span>Calendar</span>
+                <span>Menu bar</span>
+              </div>
+              <a href="https://github.com/hnbrake/WelcomeIsland" target="_blank" class="btn-project"><i class="bi bi-github"></i> GitHub</a>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article class="showcase-card">
+              <div class="showcase-media showcase-media-tall">
+                <img src="assets/img/showcase/windowside.png" alt="Window Navigation Panel demo">
+              </div>
+              <div class="showcase-card-top">
+                <div class="showcase-icon">
+                  <i class="bi bi-layout-sidebar-inset"></i>
+                </div>
+                <span class="showcase-step">02</span>
+              </div>
+              <h4>Window Navigation Panel</h4>
+              <p>A glassy left-edge panel of open-app icons — nudge the pointer to the edge and switch apps instantly.</p>
+              <div class="showcase-tags">
+                <span>Edge panel</span>
+                <span>App switcher</span>
+                <span>Glass UI</span>
+              </div>
+              <a href="https://github.com/hnbrake/WindowSide" target="_blank" class="btn-project"><i class="bi bi-github"></i> GitHub</a>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article class="showcase-card">
+              <div class="showcase-media project-slideshow">
+                <img src="assets/img/showcase/resource-monitor.png" alt="Menu Bar Resource Monitor desktop panel demo" class="project-slide active">
+                <img src="assets/img/showcase/resource-monitor-menubar.png" alt="Menu Bar Resource Monitor menu bar demo" class="project-slide">
+              </div>
+              <div class="showcase-card-top">
+                <div class="showcase-icon">
+                  <i class="bi bi-speedometer2"></i>
+                </div>
+                <span class="showcase-step">03</span>
+              </div>
+              <h4>Menu Bar Resource Monitor</h4>
+              <p>Live CPU, memory, and network from the menu bar, plus a floating desktop panel and WidgetKit extension for richer glances.</p>
+              <div class="showcase-tags">
+                <span>Menu bar</span>
+                <span>Desktop panel</span>
+                <span>WidgetKit</span>
+              </div>
+              <a href="https://github.com/hnbrake/ResourceMonitor" target="_blank" class="btn-project"><i class="bi bi-github"></i> GitHub</a>
+            </article>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Showcase Section -->
+
+
     <!-- ======= Projects Section ======= -->
     <section id="projects" class="projects">
       <div class="container">
 
         <div class="section-title">
-          <h2>Most Proud Of</h2>
+          <h2>Additionally Proud Of</h2>
           <p>Highlights from my most significant projects and endeavors!</p>
         </div>
 
@@ -406,7 +503,10 @@
               <div class="skill-tags">
                 <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Git</span>
+                <span class="skill-tag">Cursor</span>
                 <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Xcode</span>
+                <span class="skill-tag">Notion</span>
                 <span class="skill-tag">Pytest</span>
                 <span class="skill-tag">MySQL</span>
                 <span class="skill-tag">Wireshark</span>
@@ -468,7 +568,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-5" data-aos="fade-up">
             <h3 class="resume-title">Summary</h3>
             <div class="resume-item pb-0">
               <h4>Hannah Brake</h4>
@@ -493,7 +593,7 @@
               <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div> -->
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title"> Work Experience</h3>
             <div class="resume-item">
               <h4>Software Test Engineer</h4>
@@ -858,13 +958,9 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
+        &copy; <strong><span>Hannah Brake</span></strong>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

@@ -1,0 +1,40 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs & caches
+*.log
+npm-debug.log*
+.cache/
+.temp/
+.tmp/
+
+# Dependencies (if added later)
+node_modules/
+
+# Build / deploy artifacts
+dist/
+.vercel/
+.netlify/
+.parcel-cache/
