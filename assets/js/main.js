@@ -8,18 +8,6 @@
   "use strict";
 
   /**
-   * Preloader
-   */
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-      }, 300);
-    });
-  }
-
-  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
