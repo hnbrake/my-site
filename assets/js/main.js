@@ -182,18 +182,17 @@
   }
 
   /**
-   * Animation on scroll
+   * Animation on scroll — init as soon as DOM is ready (don't wait for images)
    */
-  window.addEventListener('load', () => {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-      })
-    }
-  });
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      disableMutationObserver: false
+    });
+  }
 
   /**
    * Project image slideshows (each container cycles independently)

@@ -328,22 +328,11 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/meBg3.jpg") top center;
+  background-color: #07080c;
+  background-image: url("../img/meBg3-mobile.jpg");
+  background-position: top center;
   background-size: cover;
   position: relative;
-}
-
-#hero:before {
-  content: "";
-  background:
-    linear-gradient(135deg, rgba(7, 8, 12, 0.72) 0%, rgba(12, 14, 20, 0.55) 50%, rgba(7, 8, 12, 0.75) 100%),
-    radial-gradient(ellipse at 30% 40%, rgba(196, 181, 160, 0.15), transparent 55%);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
 }
 
 #hero .hero-container {
@@ -358,6 +347,22 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
   text-align: center;
+  /* Always visible — never wait on AOS / image load */
+  opacity: 1;
+  transform: none;
+}
+
+#hero:before {
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(7, 8, 12, 0.72) 0%, rgba(12, 14, 20, 0.55) 50%, rgba(7, 8, 12, 0.75) 100%),
+    radial-gradient(ellipse at 30% 40%, rgba(196, 181, 160, 0.15), transparent 55%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 #hero .hero-logo {
@@ -395,6 +400,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 4px;
   letter-spacing: 0.5px;
   border-bottom: 2px solid var(--accent);
+}
+
+@media (min-width: 768px) {
+  #hero {
+    background-image: url("../img/meBg3.jpg");
+  }
 }
 
 @media (min-width: 1024px) {
